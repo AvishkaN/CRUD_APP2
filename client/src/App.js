@@ -36,7 +36,6 @@ const App=()=>{
     return(
         <div className="app-wrapper">
             {console.log(products)}
-            {console.log(products)}
                     <BrowserRouter>
 
                         <Routes>

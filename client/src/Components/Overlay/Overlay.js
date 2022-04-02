@@ -23,7 +23,6 @@ function Overlay({className=""}) {
 
   const handleClick=(e)=>{
 
-    console.log(e.target);
     
     const IsSelectOverlay=(e.target.classList[0]=='Overlay-wrapper');
     const closeBtn=e.target.closest('#closeIcon');

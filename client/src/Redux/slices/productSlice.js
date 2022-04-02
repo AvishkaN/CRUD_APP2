@@ -98,7 +98,6 @@ const productSlice = createSlice({
         state.status = 'loading'
       },
       [EditProduct.fulfilled]: (state, action) => {
-        console.log(action.payload);
 
         state.products =state.products.map((product) => (product._id === action.payload._id ? action.payload : product));
 

@@ -18,7 +18,6 @@ function RegisterPage({className=""}) {
 
       const getFormData =  Object.fromEntries(new FormData(e.target));
 
-      console.log(getFormData);
 
       dispatch(createProduct(getFormData));
 

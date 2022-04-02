@@ -27,7 +27,6 @@ function AllProductsPage({className=""}) {
 
   useEffect(()=>{
 
-    console.log();
     dispatch(fetchAllProducts());
 
   },[dispatch])

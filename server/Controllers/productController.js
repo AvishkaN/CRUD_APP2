@@ -21,7 +21,6 @@ export const getAllProducts=async(req,res)=>{
 export const createProduct=async(req,res)=>{  
 
     const product=req.body;
-    console.log(product);  
 
     const newProduct=new productModel(product);
 
@@ -49,7 +48,6 @@ export const editProduct = async (req, res) => {
     const updatedProduct = req.body;
 
     
-    console.log(updatedProduct); 
 
     await productModel.findByIdAndUpdate(id, updatedProduct, { new: true });
 

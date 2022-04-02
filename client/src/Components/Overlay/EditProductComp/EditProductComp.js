@@ -21,7 +21,6 @@ function EditProductComp({className=""}) {
   
     const handleFormSubmit=(e)=>{ 
        e.preventDefault();
-       console.log(productSelect._id);  
   
   
         //  get all form data as javascript object 
