@@ -53,18 +53,18 @@ export const editProduct = async (req, res) => {
 
     res.json(updatedProduct);  
      
-}
-// export const editProduct = async (req, res) => {
+};
 
-//     const { id } = req.params;
-//     const { title, message, creator, selectedFile, tags } = req.body;
-    
-//     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No Product with id: ${id}`);
 
-//     const updatedProduct = { creator, title, message, tags, selectedFile, _id: id };
 
-//     await ProductMessage.findByIdAndUpdate(id, updatedProduct, { new: true });
+export const deleteProduct = async (req, res) => {
+    const { id } = req.params;
 
-//     res.json(updatedProduct);
-    
-// }
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+
+    await productModel.findByIdAndRemove(id); 
+
+    res.json(id); 
+
+    // res.json({ message: "product deleted successfully." });
+};

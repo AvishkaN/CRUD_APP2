@@ -11,6 +11,8 @@ export const createPost = (newPost) => axios.post(url, newPost);
 
 export const editProduct = (id, editedProduct) => axios.patch(`${url}/${id}`, editedProduct);
 
+export const deleteProduct = (id) => axios.delete(`${url}/${id}`);
+
 
 
 

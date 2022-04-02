@@ -1,5 +1,5 @@
 import {createSlice,createAsyncThunk} from '@reduxjs/toolkit';
-import {createPost, fetchPost,editProduct} from './../../Api/Api';
+import {createPost, fetchPost,editProduct, deleteProduct} from './../../Api/Api';
 
 
 // READ
@@ -39,6 +39,27 @@ export const EditProduct=createAsyncThunk('product/editProducts',async({id,edite
     const data=await editProduct( id,editedProduct );
 
     return data.data; 
+
+  }catch(error){
+      console.log(error);
+  
+  }
+
+
+});
+
+
+// DELETE 
+export const DeleteProduct=createAsyncThunk('product/deleteProducts',async(id)=>{
+
+  try{
+
+    await deleteProduct(id);
+
+    
+
+    return id;
+
 
   }catch(error){
       console.log(error);
@@ -104,6 +125,23 @@ const productSlice = createSlice({
         state.status = 'success';
       },
       [EditProduct.rejected]: (state, action) => {
+        state.status = 'failed'
+      },
+
+
+      // DELETE
+      [DeleteProduct.pending]: (state, {payload}) => { 
+        state.status = 'loading'
+      },
+      [DeleteProduct.fulfilled]: (state, action) => {   
+
+        console.log(action.payload);
+
+        state.products =state.products.filter((product) => (product._id !== action.payload));
+
+        state.status = 'success';
+      },
+      [DeleteProduct.rejected]: (state, action) => {
         state.status = 'failed'
       },
 

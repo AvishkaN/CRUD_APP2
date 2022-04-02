@@ -4,7 +4,7 @@ import ScrollWindowTop from './../../Functions/DOM/ScrollWindowTop';
 
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllProducts, selectProducts, setSelectedProduct } from '../../Redux/slices/productSlice';
+import { DeleteProduct, fetchAllProducts, selectProducts, setSelectedProduct } from '../../Redux/slices/productSlice';
 import FilterDataById from '../../Functions/FilderDataById';
 import { ShowAddProductFN, ShowEditProductFN } from '../../Redux/slices/clickSlice';
 
@@ -37,7 +37,22 @@ function AllProductsPage({className=""}) {
     const productDiv=e.target.closest(".product");
 
     const selectEditBtn=e.target.closest("#edit-btn");
+    const selectDeleteBtn=e.target.closest("#delete-btn");
 
+
+    if(selectDeleteBtn){
+      
+      // select Product Id
+      const SelectedproductId=productDiv.dataset.id;
+
+
+      console.log(SelectedproductId);
+
+      // dispatch redux 
+      dispatch(DeleteProduct(SelectedproductId));
+
+      
+    }
 
     if(selectEditBtn){
       

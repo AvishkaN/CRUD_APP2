@@ -24,7 +24,8 @@ function Product({
             <div className="">{createdAt}</div>
 
 
-            <div id="edit-btn" className="text-color-red font-2  cursor-p ">EDIT</div>
+            <div id="edit-btn" className="text-color-green font-2  cursor-p ">EDIT</div>
+            <div id="delete-btn" className="text-color-red font-2  cursor-p ">DELETE</div>
 
             .
 
