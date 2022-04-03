@@ -2,11 +2,10 @@ import {createSlice} from '@reduxjs/toolkit';
 
 export const clickSlice=createSlice({
     name:"clicks",
-    initialState:{        
+    initialState:{         
         showOverlay:false,     
         showAddProductComp:false,   
         showEditProductComp:false,   
-
 
     },
     reducers:{

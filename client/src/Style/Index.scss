@@ -95,8 +95,13 @@ h1{
     display: inline-block !important;
 }
 
-.background-hover:hover{
-    background: var(--color-grey-2);
+.background-hover{
+
+    &:hover{
+        
+        background: var(--color-grey-2);
+        border-radius: 50%;
+    }
 }
 
 @media(max-width:600px){     
@@ -319,13 +324,8 @@ a{
 
 
 
-@media   (max-width: 1329px) {   
-       
-    :root {    
-        --page-content-width: 84%;   
-    }
-}
-@media   (max-width: 1030px) {   
+
+@media   (max-width: 992px) {   
        
     :root {     
         --page-content-width: 94%;   
@@ -333,19 +333,20 @@ a{
 }
 
 
-@media   (max-width: 383px) {   
-       
-    html {       
-        font-size: 59.5%;
-    }
-}
 
-@media   (max-width: 330px) {   
+// @media   (max-width: 383px) {   
        
-    html {       
-        font-size: 50.5%;
-    }
-}
+//     html {       
+//         font-size: 59.5%;
+//     }
+// }
+
+// @media   (max-width: 330px) {   
+       
+//     html {       
+//         font-size: 50.5%;
+//     }
+// }
 
 
 

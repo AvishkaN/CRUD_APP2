@@ -15,14 +15,18 @@ import { selectUser } from '../../Redux/slices/userSlice';
 
 
 
+
+
 function AllProductsPage({className=""}) {
 
 
   const dispatch=useDispatch();
-  const productSelect=useSelector(selectProducts);
-
   const navigate=useNavigate();
+
+  const productSelect=useSelector(selectProducts);
   const UserSelect=useSelector(selectUser);
+
+
 
 
   useEffect(()=>{
@@ -95,11 +99,11 @@ function AllProductsPage({className=""}) {
 
       <div className="all-products-wrapper">
          
-        <div className="">
+        <div className="row justify-content-center">
 
         {
               productSelect.products.map(productData=>(
-                  <Product  key={productData._id}  productId={productData._id} className=""  {...productData}>{"txt"}</Product>
+                  <Product  key={productData._id}  productId={productData._id} className="col-lg-3 col-sm-5 col-11 "  {...productData}>{"txt"}</Product>
 
               ))
         }
