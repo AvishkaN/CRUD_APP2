@@ -27,25 +27,60 @@ export const SignUp=async(req,res)=>{
 
 
 
-exports.login = catchAsync(async (req, res) => {
-    const { email, password } = req.body;
-  
-    // 1) Check if email and password exist
-    if (!email || !password) {
-        res.status(409).json({message:err.message});  
+export const Login = async (req, res) => {
 
-      return next(new AppError('Please provide email and password!', 400));
-    }
-    // 2) Check if user exists && password is correct
-    const user = await User.findOne({ email }).select('+password');
   
-    if (!user || !(await user.correctPassword(password, user.password))) {
-      return next(new AppError('Incorrect email or password', 401));
-    }
-  
-    // 3) If everything ok, send token to client
-    createSendToken(user, 200, req, res);
-  });
+                const { email, password } = req.body; 
+                // console.log(req.body);     
+                // console.log(email, password);         
+                
+                // 1) Check if email and password exist
+                if (!email || !password) {
+                    
+                  return res.status(400).json({message:'Please provide email and password!'});  
+                  
+                } 
+                
+                
+                // 2) Check if user exists && password is correct
+                const user=await userModel.findOne({ Email: email });    
+
+                if(!user || !user.Password===password){
+                  return res.status(400).json({message:'Incorrect email or password !'});  
+                }
+
+                
+                console.log(user);       
+
+              
+                // 3) If everything ok, send  to client
+
+                const sendObject={ // set what data send it 
+                      UserName:user.FirstName,
+                      Email:user.Email,
+                      UserId:user._id,  
+                };
+
+                res.status(200).json(sendObject);
+
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 export const editProduct = async (req, res) => {
@@ -79,4 +114,4 @@ export const deleteProduct = async (req, res) => {
     res.json(id); 
 
     // res.json({ message: "product deleted successfully." });
-};
+}; 

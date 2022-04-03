@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import CloseBtn from '../../Components/UI/CloseBtn/CloseBtn';
 import LinkComp from '../../Components/UI/Link/Link';
-import { signUpAsync } from '../../Redux/slices/userSlice';
+import { logInAsync, signUpAsync } from '../../Redux/slices/userSlice';
 import { useDispatch } from 'react-redux';
 
 
@@ -18,15 +18,24 @@ function CommonComp(props) {
     const handleFormSubmit=(e)=>{ 
         e.preventDefault();
     
-    
-          const getFormData =  Object.fromEntries(new FormData(e.target));
-    
-          console.log(getFormData);
-    
-          dispatch(signUpAsync(getFormData));
-  
-          // Remove overlay and this component
-        //   dispatch(ShowHideAllFN());
+        const logInBtn=e.target.querySelector('#log-in-btn');
+        const SignUpBtn=e.target.querySelector('#sign-up-btn');
+        console.log(e.target);
+        
+        
+        const getFormData =  Object.fromEntries(new FormData(e.target));
+
+        if(logInBtn){  // if select login btn
+            dispatch(logInAsync(getFormData));
+
+        }  
+
+        if(SignUpBtn){ //  if select register btn
+            dispatch(signUpAsync(getFormData));
+
+        }
+
+
   
     
     

@@ -15,12 +15,13 @@ export const deleteProduct = (id) => axios.delete(`${url}/${id}`);
 
 
 
-const urlUsers='http://localhost:5000/users'; 
+const urlUser='http://localhost:5000/user'; 
 
 // export const fetchPost=()=>axios.get(url);
 
-export const SignUp = (newUser) => axios.post(urlUsers, newUser);
+export const SignUp = (newUser) => axios.post(urlUser, newUser);
 
+export const LogIn = (email,password) => axios.post(`${urlUser}/logIn`, {email,password});
 // export const editProduct = (id, editedProduct) => axios.patch(`${url}/${id}`, editedProduct);
 
 // export const deleteProduct = (id) => axios.delete(`${url}/${id}`);

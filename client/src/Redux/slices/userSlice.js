@@ -1,16 +1,35 @@
 import {createSlice,createAsyncThunk} from '@reduxjs/toolkit';
-import {SignUp} from '../../Api/Api';
+import {LogIn, SignUp} from '../../Api/Api';
 
 
 
 
 
-// CREATE
+// SIGN UP
 export const signUpAsync=createAsyncThunk('user/signUp',async(userData)=>{
 
   try{
     const data=await SignUp(userData);
     console.log(data);
+    return data.data; 
+
+  }catch(error){
+      console.log(error);
+  
+  }
+
+
+});
+
+
+// Log In
+export const logInAsync=createAsyncThunk('user/logIn',async({Email,Password})=>{
+
+  try{
+    console.log(Email,Password);
+
+    const data=await LogIn(Email,Password);
+
     return data.data; 
 
   }catch(error){
@@ -29,7 +48,7 @@ export const signUpAsync=createAsyncThunk('user/signUp',async(userData)=>{
 const UsertSlice = createSlice({
     name: 'user',
     initialState: {
-      user: [],
+      user: {},
     
       status: null,
     },
@@ -52,9 +71,14 @@ const UsertSlice = createSlice({
       [signUpAsync.rejected]: (state, action) => {
         state.status = 'failed'
       },
+      
+      
+      // Log In
 
-
-     
+      [logInAsync.fulfilled]: (state, { payload }) => {
+        state.user = payload;
+        state.status = 'success';
+      },
 
 
      

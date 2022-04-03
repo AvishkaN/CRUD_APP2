@@ -4,15 +4,16 @@ import mongoose from "mongoose";
 const UserSchema=mongoose.Schema({
     FirstName:String,
     LastName:String,
-    email:String,
-    phone:String,
+    Email:String,
+    MobileNumber:String,
     Address:String,
     Password:String,
 
 
+
     createdAt:{
         type:Date,
-        default:new Date(), 
+        default:new Date(),   
     },
     
     

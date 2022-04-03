@@ -24,6 +24,8 @@ function RegisterPage({className=""}) {
 
 
 
+
+
                     <form    id={"myform"}>
 
                     <label htmlFor="productName">Product Name:</label><br />
@@ -31,8 +33,8 @@ function RegisterPage({className=""}) {
                     <Input id="FirstName" name="FirstName" className="input w-100 p-2  ps-3 mt-5  font-1-6  border-radius-5 border-grey"   placeholder='First Name *' ></Input>
                    
                     <Input id="LastName" name="LastName" className="input w-100 p-2  ps-3 mt-4  font-1-6  border-radius-5  border-grey  "   placeholder='Last Name  *' ></Input>
-                    <Input id="email" name="email" className="input w-100 p-2  ps-3 mt-4  font-1-6  border-radius-5  border-grey  "   placeholder='email  *' ></Input>
-                    <Input id="phone" name="phone" className="input w-100 p-2  ps-3 mt-4  font-1-6  border-radius-5  border-grey  "   placeholder='phone  *' ></Input>
+                    <Input id="Email" name="Email" className="input w-100 p-2  ps-3 mt-4  font-1-6  border-radius-5  border-grey  "   placeholder='Email  *' ></Input>
+                    <Input id="MobileNumber" name="MobileNumber" className="input w-100 p-2  ps-3 mt-4  font-1-6  border-radius-5  border-grey  "   placeholder='MobileNumber  *' ></Input>
                     <Input id="Address" name="Address" className="input w-100 p-2  ps-3 mt-4  font-1-6  border-radius-5  border-grey  "   placeholder='Address  *' ></Input>
                     <Input id="Password" name="Password" className="input w-100 p-2  ps-3 mt-4  font-1-6  border-radius-5  border-grey  "   placeholder='Password  *' ></Input>
                     
@@ -40,13 +42,11 @@ function RegisterPage({className=""}) {
 
 
 
-                    {/* <input  type="submit" id='remove-overlay-btn' defaultValue="Submit" /> */}
 
                     {/* Button */}
                     <div className="text-right">
-                                   {/* <input  type="submit" id='remove-overlay-btn' defaultValue="Submit" /> */}
 
-                                  <Input type="submit" className='background-primary border-radius-5  text-color-white mt-4 w-60 font-1-6 p-2' border={false} >Register</Input>
+                                  <Input type="submit" id={"sign-up-btn"}  className='background-primary border-radius-5  text-color-white mt-4 w-60 font-1-6 p-2' border={false} ></Input>
                     </div>
                       </form>
 

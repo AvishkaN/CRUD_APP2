@@ -21,7 +21,7 @@ app.use(cors());
 
 
 app.use('/products',productRouter);      
-app.use('/users',userRouter);         
+app.use('/user',userRouter);         
 
 
 const CONNECTION_URL = 'mongodb+srv://Crud_App_DB:scO70ZvHjQm0jVU8@cluster0.rdppn.mongodb.net/DB2?retryWrites=true&w=majority';
