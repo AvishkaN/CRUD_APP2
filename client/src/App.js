@@ -9,6 +9,8 @@ import Overlay from "./Components/Overlay/Overlay";
 // Pages 
 import RegisterPage from "./Pages/RegisterPage/RegisterPage";
 import AllProductsPage from "./Pages/AllProductsPage/AllProductsPage";
+import LoginPage from "./Pages/LoginAndRegister/Login/Login";
+import Register from "./Pages/LoginAndRegister/Register/Register";
 
 import { selectProducts } from "./Redux/slices/productSlice";
 import { selectClicks } from "./Redux/slices/clickSlice";
@@ -59,7 +61,42 @@ const App=()=>{
 
 
                                 </>
+
+
+
                                 } />
+
+
+
+                                {/* login */}
+                                <Route path="/login" element={ 
+                                <>
+
+                                    <LoginPage></LoginPage>
+
+
+                                </>
+
+
+
+                                } />
+
+
+                                {/* Register */}
+                                <Route path="/register" element={ 
+                                <>
+
+                                    <Register></Register>
+
+
+                                </>
+
+
+
+                                } />
+
+
+
 
 
 

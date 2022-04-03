@@ -18,7 +18,7 @@ const ProductSchema=mongoose.Schema({
 });
 
 
-const productModel=mongoose.model('Users',ProductSchema);
+const productModel=mongoose.model('Products',ProductSchema);
 
 export default productModel;
 

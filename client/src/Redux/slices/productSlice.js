@@ -130,8 +130,8 @@ const productSlice = createSlice({
 
 
       // DELETE
-      [DeleteProduct.pending]: (state, {payload}) => { 
-        state.status = 'loading'
+      [DeleteProduct.pending]: (state, {payload}) => {  
+        state.status = 'loading' 
       },
       [DeleteProduct.fulfilled]: (state, action) => {   
 
