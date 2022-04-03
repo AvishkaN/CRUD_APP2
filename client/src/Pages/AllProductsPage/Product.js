@@ -9,9 +9,7 @@ function Product({
                     productName,
                     quantity,
                     description,
-                    userId,
                     productId,
-                    createdAt,
                 }) {
 
   return (
@@ -34,11 +32,7 @@ function Product({
                 <div className='mt-0-5-' >{quantity}</div>
             </div>
 
-            <div className="text-center   mt-1 ">
-                <div className='font-1-6  text-color-grey-ori fw-bold   ' >userId</div>
-                <div className='mt-0-5-' >{userId}</div>
-            </div>
-
+           
           
 
 
@@ -50,10 +44,7 @@ function Product({
                     <DeleteOutlinedIcon id="delete-btn"  className='font-2-9 cursor-p ms-auto background-hover text-color-red'  ></DeleteOutlinedIcon>
               </div>
 
-            {/* <div id="edit-btn" className="text-color-green font-2  cursor-p ">EDIT</div>
-            <div id="delete-btn" className="text-color-red font-2  cursor-p ">DELETE</div> */}
-
-            .
+            
 
     </DIV>
   );

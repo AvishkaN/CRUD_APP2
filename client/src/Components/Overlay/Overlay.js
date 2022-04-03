@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {  selectClicks, ShowHideAllFN } from '../../Redux/slices/clickSlice';
 import { useEffect } from 'react';
 
-import PostAdPopUp from './AddProductComp/PostAdPopUp';
+import PostAdPopUp from './AddProductComp/ProductAdPopUp';
 import EditProductComp from './EditProductComp/EditProductComp';
 
 

@@ -7,7 +7,6 @@ import Nav from "./Components/Nav/Nav";
 import Overlay from "./Components/Overlay/Overlay";
 
 // Pages 
-import RegisterPage from "./Pages/RegisterPage/RegisterPage";
 import AllProductsPage from "./Pages/AllProductsPage/AllProductsPage";
 import LoginPage from "./Pages/LoginAndRegister/Login/Login";
 import Register from "./Pages/LoginAndRegister/Register/Register";
@@ -53,18 +52,7 @@ const App=()=>{
                                 } />
 
 
-                                {/* addProduct */}
-                                <Route path="/addProduct" element={ 
-                                <>
-
-                                    <RegisterPage></RegisterPage>
-
-
-                                </>
-
-
-
-                                } />
+                              
 
 
 

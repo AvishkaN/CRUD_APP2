@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { editProduct } from '../../../Api/Api';
 import { ShowHideAllFN } from '../../../Redux/slices/clickSlice';
 import { createProduct, EditProduct, selectProducts } from '../../../Redux/slices/productSlice';
+import Input from '../../UI/Input/Input';
 import PopUp from '../PopUp/PopUp';
 
 
@@ -27,6 +28,9 @@ function EditProductComp({className=""}) {
         const getFormData =  Object.fromEntries(new FormData(e.target));
         getFormData._id=productSelect._id;    // add id to new object
 
+        // guard class --> if havent product name - cancel product add 
+        if(!getFormData.productName) return;  
+
 
   
         // dispacth to rediux     
@@ -45,28 +49,28 @@ function EditProductComp({className=""}) {
          <div className="EditProductComp-wrapper">
                 <PopUp className="">  
 
-                            <div className='font-3 fw-bold'>Edit Product</div>
+                            <div className='font-3 text-color-primary fw-bold'>Edit Product</div>
 
-                            <div className="mt-4 post-ad- pb-5 background-yellow">
+                            <div className="mt-4 post-ad- pb-5 ">
 
                                         <form  onSubmit={handleFormSubmit} ref={formRef} id={"myform"}>
-                                                <label htmlFor="productName">Product Name:</label><br />
-                                                <input type="text" id="productName" name="productName" defaultValue={productSelect.productName} /><br />
+                                                <label className='text-color-grey-ori'>Product Name</label>
+                                                <Input id="productName" name="productName" className="input w-100 p-2  ps-3 mb-4 mt-0-5-  font-1-6  border-radius-5  border-grey  "   placeholder=' ProductName *'     defaultValue={productSelect.productName}     ></Input>
                                                 
-                                                <label htmlFor="description">description:</label><br />
-                                                <input type="text" id="description" name="description"   defaultValue={productSelect.description}  /><br /><br />
+                                                <label className='text-color-grey-ori'>Description</label>
+                                                <Input id="description" name="description" className="input w-100 p-2  ps-3 mb-4 mt-0-5-  font-1-6  border-radius-5  border-grey  "   placeholder='Description'     defaultValue={productSelect.description}     ></Input>
                                                 
-                                                <label htmlFor="quantity">quantity:</label><br />
-                                                <input type="text" id="quantity" name="quantity"   defaultValue={productSelect.quantity}  /><br /><br />
-                                            
-                                                <label htmlFor="userId">UserId:</label><br />
-                                                <input type="text" id="userId" name="userId"   defaultValue={productSelect.userId}  /><br /><br />
-                                               
+                                                <label className='text-color-grey-ori'>Quantity</label>
+                                                <Input id="quantity" name="quantity" className="input w-100 p-2  ps-3 mb-4 mt-0-5-  font-1-6  border-radius-5  border-grey  "   placeholder='Quantity'     defaultValue={productSelect.quantity}     ></Input>
+
+
+
+                                                
                                                
 
-                        
-                    
-                                                <input  type="submit" id='remove-overlay-btn' defaultValue="Submit" />
+
+                                                <Input type="submit" className='background-primary border-radius-5  text-color-white mt-4 w-30 font-1-6 p-2'  border={false} value={"Edit"} id={"log-in-btn"} ></Input>
+
 
                                     </form>
 
