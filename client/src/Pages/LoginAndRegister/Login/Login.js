@@ -5,9 +5,28 @@ import LinkComp from '../../../Components/UI/Link/Link';
 import Input from '../../../Components/UI/Input/Input';
 
 
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../../Redux/slices/userSlice';
 
 
-function RegistarPage({className="",btnText="LOGIN",secondText="Sign Up",to="/register"}) {
+
+
+function RegistarPage({className="",btnText="LOGIN",secondText="Sign Up",to="/signUp"}) {
+
+  const navigate=useNavigate();
+  const UserSelect=useSelector(selectUser);
+
+
+  useEffect(()=>{
+    
+    if(UserSelect.user){ 
+      navigate('/');
+    };
+
+  },[UserSelect.user]);
+
   return (
     <DIV >
 
@@ -17,7 +36,7 @@ function RegistarPage({className="",btnText="LOGIN",secondText="Sign Up",to="/re
 
                                 <CommonComp className={`${className} display-flex align-items-center `}>
 
-                                                {/* Login Bottom */}
+                                                {/* Form  */}
                                                 <form className="    ">
 
                                                                 <Input id="Email" name="Email" className="input w-100 p-2  ps-3 mt-4  font-1-6  border-radius-5  border-grey  "   placeholder='Email  *' ></Input>

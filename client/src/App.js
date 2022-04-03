@@ -83,7 +83,7 @@ const App=()=>{
 
 
                                 {/* Register */}
-                                <Route path="/register" element={ 
+                                <Route path="/signUp" element={ 
                                 <>
 
                                     <Register></Register>

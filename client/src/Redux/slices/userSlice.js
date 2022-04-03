@@ -11,7 +11,14 @@ export const signUpAsync=createAsyncThunk('user/signUp',async(userData)=>{
   try{
     const data=await SignUp(userData);
     console.log(data);
-    return data.data; 
+
+    const sendObject={ // set what data send it 
+      FirstName:data.data.FirstName,
+      Email:data.data.Email,
+      UserId:data.data._id,  
+    };
+
+    return sendObject; 
 
   }catch(error){
       console.log(error);
@@ -48,7 +55,7 @@ export const logInAsync=createAsyncThunk('user/logIn',async({Email,Password})=>{
 const UsertSlice = createSlice({
     name: 'user',
     initialState: {
-      user: {},
+      user: null,
     
       status: null,
     },

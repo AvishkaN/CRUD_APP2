@@ -5,9 +5,30 @@ import Password from '../../../Components/UI/Input/PasswordInput/Password';
 import CommonComp from '../CommonComp';
 
 
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../../Redux/slices/userSlice';
+
+
+
 
 
 function RegisterPage({className=""}) {
+
+  const navigate=useNavigate();
+  const UserSelect=useSelector(selectUser);
+
+
+  useEffect(()=>{
+    
+    if(UserSelect.user){ 
+      navigate('/');
+    };
+
+  },[UserSelect.user]);
+
+
   return (
     <DIV className={`${className}`}>
          <div className="RegisterPage-wrapper">
@@ -16,11 +37,6 @@ function RegisterPage({className=""}) {
          <CommonComp className={`${className} display-flex align-items-center `}>
 
 
-                    {/* <Input className="input w-100 p-2  ps-3 mt-5  font-1-6  border-radius-5"   placeholder='Name *'></Input>
-                    <Input className="input w-100 p-2  ps-3 mt-5  font-1-6  border-radius-5"   placeholder='Email Address *'></Input>
-                    <Password className="input w-100 p-2  ps-3 mt-5  font-1-6  border-radius-5"   placeholder='password *'></Password>
-                    <Password className="input w-100 p-2  ps-3 mt-5  font-1-6  border-radius-5"   placeholder='Confirm password *'></Password> */}
-
 
 
 
@@ -28,7 +44,6 @@ function RegisterPage({className=""}) {
 
                     <form    id={"myform"}>
 
-                    <label htmlFor="productName">Product Name:</label><br />
                     
                     <Input id="FirstName" name="FirstName" className="input w-100 p-2  ps-3 mt-5  font-1-6  border-radius-5 border-grey"   placeholder='First Name *' ></Input>
                    

@@ -56,7 +56,7 @@ export const Login = async (req, res) => {
                 // 3) If everything ok, send  to client
 
                 const sendObject={ // set what data send it 
-                      UserName:user.FirstName,
+                      FirstName:user.FirstName,
                       Email:user.Email,
                       UserId:user._id,  
                 };

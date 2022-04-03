@@ -8,6 +8,11 @@ import { DeleteProduct, fetchAllProducts, selectProducts, setSelectedProduct } f
 import FilterDataById from '../../Functions/FilderDataById';
 import { ShowAddProductFN, ShowEditProductFN } from '../../Redux/slices/clickSlice';
 
+import { useNavigate } from 'react-router-dom';
+import { selectUser } from '../../Redux/slices/userSlice';
+
+
+
 
 
 function AllProductsPage({className=""}) {
@@ -15,6 +20,18 @@ function AllProductsPage({className=""}) {
 
   const dispatch=useDispatch();
   const productSelect=useSelector(selectProducts);
+
+  const navigate=useNavigate();
+  const UserSelect=useSelector(selectUser);
+
+
+  useEffect(()=>{
+    
+    if(!UserSelect.user){ 
+      navigate('/login');
+    };
+
+  },[UserSelect.user]);
 
 
   useEffect(()=>{

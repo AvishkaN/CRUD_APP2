@@ -74,7 +74,7 @@ function CommonComp(props) {
 
                                                      
                                                     <NavLink to="/login" activeclassname="active"  className="a   font-1-6  fw-bold">login</NavLink>
-                                                    <NavLink to="/register"   className="a   font-1-6  fw-bold">register</NavLink>
+                                                    <NavLink to="/signUp"   className="a   font-1-6  fw-bold">SignUp</NavLink>
                                                     
 
                                         </div>
