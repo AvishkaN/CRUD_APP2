@@ -29,7 +29,7 @@ function EditProductComp({className=""}) {
         getFormData._id=productSelect._id;    // add id to new object
 
         // guard class --> if havent product name - cancel product add 
-        if(!getFormData.productName) return;  
+        if(!getFormData.productName || !getFormData.description || !getFormData.quantity) return;  
 
 
   

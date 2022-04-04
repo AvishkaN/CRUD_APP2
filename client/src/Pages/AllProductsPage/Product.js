@@ -13,7 +13,7 @@ function Product({
                 }) {
 
   return (
-    <DIV className={`product  border-radius-20 pt-2 ps-2 pe-2 mb-3 border  ms-3 me-4  mt-1  box-shadow-normal  ${className}     `}   data-id={productId} >
+    <DIV className={`product  border-radius-20 pt-2 ps-2 pe-2 pb-4 mb-3 border  ms-3 me-4  mt-1  box-shadow-normal  ${className}     `}   data-id={productId} >
 
             <div className="text-center   mt-1 ">
                 <div className='font-1-6  text-color-grey-ori fw-bold   ' >Product Name</div>

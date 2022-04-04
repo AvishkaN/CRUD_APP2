@@ -104,7 +104,6 @@ const DIV=styled.div`
         box-shadow: -2px 5px 11px 0px #b6a2a2;
         margin-left: auto;
         margin-right: auto; 
-        /* border:2px solid black; */
 
         
         @media(max-width:1067px){     
@@ -115,36 +114,14 @@ const DIV=styled.div`
         }
 
 
-        input{
-            // border:1px solid gray;
-            /* border-radius: 20px;   */
-        }
+     
 
-        .social-media-container{
-            .social{
-                .social-media-btn{
-                    border:2px solid black;
-
-                    svg{    
-                        width: 23px;
-                        height: 23px;
-                    }
-                }
-            }
-        }
-
-        .btn-register{
-            &:hover{
-
-                color: var(--text-color-primary);
-            }
-        
-        }
+       
 
     }
-
-    .active{
-        color:#fea502;
+ 
+    .active{ 
+        color:#3cafd5;
         text-decoration:underline;
     }
 

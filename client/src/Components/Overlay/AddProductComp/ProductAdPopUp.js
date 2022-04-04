@@ -25,7 +25,7 @@ function PostAdPop({className=""}) {
         const getFormData =  Object.fromEntries(new FormData(e.target));
 
         // guard class --> if havent product name - cancel product add 
-        if(!getFormData.productName) return;  
+        if(!getFormData.productName || !getFormData.description || !getFormData.quantity) return;  
   
         console.log(getFormData);
   
