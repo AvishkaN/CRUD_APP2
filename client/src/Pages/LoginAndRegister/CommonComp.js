@@ -45,11 +45,7 @@ function CommonComp(props) {
 
   return (
       <>
-      <div className="text-right mt-3">
-          <LinkComp to="/">
-            <CloseBtn className='font-3 me-sm-5 me-3 cursor-p'></CloseBtn>
-          </LinkComp>
-      </div>
+  
 
 
     <DIV className={`${props.className} background-aqu`} onSubmit={handleFormSubmit}>

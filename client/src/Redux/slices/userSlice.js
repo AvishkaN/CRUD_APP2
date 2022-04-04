@@ -60,7 +60,14 @@ const UsertSlice = createSlice({
       status: null,
     },
     reducers:{
-      
+
+      logOutUserFN:(state)=>{     
+
+        state.user=null;     
+
+    },
+
+
     },
     extraReducers: {
 
@@ -100,12 +107,8 @@ const UsertSlice = createSlice({
 
   
 
+  export const {logOutUserFN} =UsertSlice.actions; 
 
-
-
-  // export const {
-
-  //                } =productSlice.actions; 
 
 
 

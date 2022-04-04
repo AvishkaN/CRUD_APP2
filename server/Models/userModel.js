@@ -4,10 +4,18 @@ import mongoose from "mongoose";
 const UserSchema=mongoose.Schema({
     FirstName:String,
     LastName:String,
-    Email:String,
-    MobileNumber:String,
+    Email:{
+        type: String,
+        unique: true,
+    },
+    MobileNumber:{
+        type: Number,
+        unique: true,
+    },
     Address:String,
     Password:String,
+
+
 
 
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import AddIcon from '@mui/icons-material/Add';
 import LogoutIcon from '@mui/icons-material/LogoutOutlined';
 
-import { selectUser } from '../../Redux/slices/userSlice';
+import { logOutUserFN, selectUser } from '../../Redux/slices/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectClicks, ShowAddProductFN } from '../../Redux/slices/clickSlice';
 
@@ -25,6 +25,10 @@ function Nav({className=""}) {
   
     if(addIcon){
       dispatch(ShowAddProductFN());
+    }
+
+    if(logOutIcon){
+      dispatch(logOutUserFN());
     }
 
 
