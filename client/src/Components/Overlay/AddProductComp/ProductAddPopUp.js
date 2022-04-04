@@ -1,8 +1,9 @@
 import { useRef } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { ShowHideAllFN } from '../../../Redux/slices/clickSlice';
 import { createProduct } from '../../../Redux/slices/productSlice';
+import { selectUser } from '../../../Redux/slices/userSlice';
 import Input from '../../UI/Input/Input';
 import PopUp from '../PopUp/PopUp';
 
@@ -16,20 +17,26 @@ function PostAdPop({className=""}) {
 
     const formRef=useRef();
     const dispatch=useDispatch();
+    const userSelect=useSelector(selectUser);
   
   
     const handleFormSubmit=(e)=>{ 
       e.preventDefault();
   
   
+      // get all form data
         const getFormData =  Object.fromEntries(new FormData(e.target));
 
         // guard class --> if havent product name - cancel product add 
         if(!getFormData.productName || !getFormData.description || !getFormData.quantity) return;  
   
         console.log(getFormData);
+        console.log(userSelect);
   
-        dispatch(createProduct(getFormData));
+        dispatch(createProduct({
+          userId :  userSelect.user.UserId,
+              productDetails :getFormData
+            }));
 
         // Remove overlay and this component
         dispatch(ShowHideAllFN());

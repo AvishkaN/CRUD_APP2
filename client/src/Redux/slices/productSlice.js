@@ -3,19 +3,21 @@ import {createPost, fetchPost,editProduct, deleteProduct} from './../../Api/Api'
 
 
 // READ
-export const fetchAllProducts=createAsyncThunk('posts/getPosts',async()=>{
+export const fetchAllProducts=createAsyncThunk('posts/getPosts',async(userId)=>{
 
     const data=await fetchPost();
-    // console.log(data);
 
-    return data.data; 
+    return data.data.filter(product=>product.userId ===userId ); 
 
 
 });
 
 
 // CREATE
-export const createProduct=createAsyncThunk('posts/createProducts',async(productDetails)=>{
+export const createProduct=createAsyncThunk('posts/createProducts',async({userId,productDetails})=>{
+
+  productDetails={...productDetails,userId:userId};  // add loged user id to product 
+
 
   try{
     const data=await createPost(productDetails);

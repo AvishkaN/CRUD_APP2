@@ -48,7 +48,8 @@ function AllProductsPage({className=""}) {
 
   useEffect(()=>{
 
-    dispatch(fetchAllProducts());
+    // dispatch all product relavent current user
+    dispatch(fetchAllProducts(UserSelect?.user?.UserId)); 
 
   },[dispatch])
 
