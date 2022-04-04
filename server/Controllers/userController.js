@@ -10,7 +10,6 @@ export const SignUp=async(req,res)=>{
 
     const user=req.body;
 
-    console.log(user);
 
     const newUser=new userModel(user);
 
@@ -31,8 +30,6 @@ export const Login = async (req, res) => {
 
   
                 const { email, password } = req.body; 
-                // console.log(req.body);     
-                // console.log(email, password);         
                 
                 // 1) Check if email and password exist
                 if (!email || !password) {
@@ -50,7 +47,6 @@ export const Login = async (req, res) => {
                 }
 
                 
-                console.log(user);       
 
               
                 // 3) If everything ok, send  to client
